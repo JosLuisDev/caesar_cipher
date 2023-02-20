@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+/*:root nos ayuda a crear variables para utilizarlas en el proyecto*/
+:root {
+    --color-terminal: #292b36;
+    --borde-redondo: 4px;
+}
+
+* {
+    font-family: "Source Code Pro",monospace;/*tipo de letra para utilizar en toda la pagina*/
+}
+
+body {
+    height: 100vh;/*Que abarque toda la pantalla de arriba hacia abajo*/
+    display: flex; /*activar propiedades de flexbox*/
+    justify-content: center;/*Centrar horizontalmente*/
+    align-items: center; /*Centrar verticalmente*/
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    color: white;
+}
+
+/*Animacion background movimiento de colores*/
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+input, button {
+    border: none;/*input y button sin bordes*/
+    outline: none; /*input y button sin contornos*/
+}
+
+main {
+    padding: 25px;/*Separacion entre el contenido del cifrador y la caja que lo contiene*/
+    box-shadow: 8px 8px 35px 0px rgb(0 0 0 / 75%);/*efceto 3d de la caja donde esta todo el contenido*/
+    border-radius: var(--borde-redondo); /*utilizamos nuestra variable para redondear esquinas*/
+}
+
+h1 {
+    margin: 0; /*Quitar el margen del texto Cifrador Cesar para que se junte mas al contenido*/
+}
+
+/*Estilos para el input donde el usuario ingresara el texto y donde se mostrara el resultado*/
+#input-original, #resultado {
+    background-color: var(--color-terminal); /*utilizamos la variable creada para el fondo de las cajas*/
+    width: 92%;/*Que el fondo del texto se alinie con el demas contenido*/
+}
+
+#input-original {
+    margin: 10px 0 0; /*margen solo arriba para separar un poco el texto Cifrador Cesar*/
+    padding: 10px;/*separacion adentro de la caja en todas direcciones para darle mas espacio al texto*/
+    color: white;
+    border-top-left-radius: var(--borde-redondo);
+    border-top-right-radius: var(--borde-redondo);
+}
+
+#resultado {
+    height: 20px;
+    color: #5af78d; /*Color verde a la letra para simular que es una terminal*/
+    padding: 0 10px 10px;
+    border-bottom-left-radius: var(--borde-redondo);
+    border-bottom-right-radius: var(--borde-redondo);
+}
+
+.rango {
+    margin-top: 10px;/*Separar la barra de la caja que simula la consola*/
+    display: grid;
+    grid-template-columns: 1fr 20px; /*que el numero del range ocupe 20px de ancho y la barra lo demas*/
+}
+
+output {
+    margin-left: 5px;
+}
+
+/*Estilos de la barra de rango*/
+input[type='range'] {
+    -webkit-appearance: none;/*quitarle los estilos por defecto que el navegador le da*/
+    border-radius: var(--borde-redondo);
+    background: var(--color-terminal);
+    margin: 0;
+    padding: 0 5px;
+    height: 15px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    cursor: pointer;
+    -webkit-appearance: none;
+    background: white;/*hacer la bolita de color blanco*/
+    border-radius: 50%;/*que sea circular*/
+    height: 10px;
+    width: 10px;
+}
+

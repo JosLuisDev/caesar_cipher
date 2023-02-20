@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cifrador Cesar</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" type="text/javascript" defer></script><!--Defer para que se cargue al final de nuestro body-->
+</head>
+<body>
+    <main>
+        <h1>Cifrador Cesar.</h1>
+        <!--autocomplete off nos permite evitar que el navegador guarde como un historial de lo que vamos escribiendo y quiera autocompletar por nosotros-->
+        <form id="cifrador" autocomplete="off">
+            <input id="input-original" spellcheck="false" placeholder="Ingrese el texto" type="text" name="text">
+            <div id="resultado"></div><!--Mostrara el texto ya encriptado-->
+            <div class="rango"><!--seccion de la barra del rango del indice de encriptado-->
+<!--El valor de oninput lo que hace es settear el proximo elemento por el valor al que el usuario movio el circulo-->
+                <input id="rango" type="range" value="10" min="1" max="20" oninput="this.nextElementSibling.value = this.value"><!--Mostrara la barra para cambiar el indice del encriptado-->
+                <output>10</output><!--Este se modificara cada que el usuario mueva el circulo de la barra de arriba-->
+            </div>
+        </form>
+    </main>
+</body>
+</html>
